@@ -75,7 +75,7 @@ export const RAW_NEWS_DATA: NewsItem[] = [
       
       <p class="conclusion">مصاحبه‌کننده: تیم تحریریه بارمان | تاریخ انتشار: اسفند ۱۴۰۴</p>
     `,
-    image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&q=80', // Business interview/meeting image
+    image: '/ceoart.webp', // Business interview/meeting image
     category: 'مصاحبه',
     author: 'تیم تحریریه',
     publishedAt: '2026-03-05T11:00:00Z',

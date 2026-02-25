@@ -9,8 +9,10 @@ import { useGSAP } from "@gsap/react";
 import { cn } from "@/lib/utils";
 import
 {
-    LuHouse, LuLayers, LuShieldCheck, LuCirclePlay,
-    LuTriangleAlert, LuCpu, LuNetwork, LuHandshake, LuChevronUp
+    LuLayers,
+    LuTriangleAlert, LuNetwork, LuChevronUp,
+    LuStamp,
+    LuCirclePlay
 } from "react-icons/lu";
 
 if ( typeof window !== "undefined" )
@@ -26,13 +28,11 @@ interface IDockItem
 }
 
 const DOCK_ITEMS: IDockItem[] = [
-    { id: "hero", label: "معرفی", icon: LuHouse },
     { id: "products", label: "محصولات", icon: LuLayers },
-    { id: "story", label: "مجوزها", icon: LuShieldCheck },
+    { id: "certificate", label: "مجوزها", icon: LuStamp },
     { id: "pilotvideo", label: "ویدیو", icon: LuCirclePlay },
     { id: "why", label: "ضرورت", icon: LuTriangleAlert },
-
-    { id: "future", label: "استقرار", icon: LuNetwork },
+    { id: "how", label: "فناوری", icon: LuNetwork },
 
 ];
 

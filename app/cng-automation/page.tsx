@@ -81,7 +81,7 @@ export default function CngAutomationPage ()
           Note: CngStorySection handles its own full-screen viewport and scroll-jacking.
       */}
 
-            <Section variant="white" spacing="large" id="pilotvideo">
+            <Section variant="white" spacing="large" id="certificate">
                 <div className="container mx-auto max-w-5xl px-4">
 
                     <CngStorySection />

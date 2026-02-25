@@ -15,8 +15,7 @@ import ClinicansForWhomSection from "@/components/clinicans/ClinicansForWhomSect
 import ClinicansSecuritySection from "@/components/clinicans/ClinicansSecuritySection";
 import ClinicansTechSection from "@/components/clinicans/ClinicansTechSection";
 import ClinicansGetStartedSection from "@/components/clinicans/ClinicansGetStartedSection";
-import ClinicansSystemCarousel from "@/components/clinicans/ClinicansSystemCarousel";
-import ClinicansSystemTabs from "@/components/clinicans/ClinicansSystemTabs";
+
 import ClinicansCardScroll from "@/components/clinicans/ClinicansCardScroll";
 
 /**
@@ -124,15 +123,17 @@ export default function ClinicansPage ()
 
 
             {/* CHAPTER 3: IMMERSIVE - Specialists Focus */ }
+            <div id="features">
 
-            <ClinicansCardScroll />
+                <ClinicansCardScroll />
+            </div>
 
             {/* CHAPTER 4: AUDIENCE, SECURITY & TECH */ }
             <Section variant="white" spacing="large" id="audience">
                 <div className="flex flex-col gap-24 lg:gap-32">
                     <ClinicansForWhomSection />
 
-                    <div className="mx-auto h-px w-2/3 bg-slate-100" aria-hidden="true" />
+                    <div id="defense" className="mx-auto h-px w-2/3 bg-slate-100" aria-hidden="true" />
 
                     <ClinicansSecuritySection />
 

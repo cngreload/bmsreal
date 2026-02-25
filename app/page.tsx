@@ -85,7 +85,7 @@ export default function HomePage ()
             title: "پلتفرم سلامت کلینیکانز",
             subtitle:
               "سیستم یکپارچه مدیریت کلینیک‌های پزشکی با هوش مصنوعی و تحلیل داده‌های سلامت در زمان واقعی",
-            ctaText: "درخواست دمو",
+            ctaText: "آشنایی با پلتفرم",
             ctaLink: "/clinicans",
             backgroundImage: "/ctest.jpg",
             category: "HEALTH TECH",

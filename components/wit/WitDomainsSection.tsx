@@ -203,13 +203,7 @@ export default function WitDomainsSection ()
                                         <LuActivity className="w-4 h-4 text-emerald-500 animate-pulse" />
                                         <span className="text-[9px] font-mono font-bold text-slate-400">DOMAIN_SYNC_OK</span>
                                     </div>
-                                    <Link
-                                        href={ `/solutions/${ domain.id }` }
-                                        className="flex items-center gap-2 text-xs font-black text-bms-primary"
-                                    >
-                                        <span>بررسی راهکار</span>
-                                        <LuArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-                                    </Link>
+
                                 </div>
                             </motion.article>
                         );

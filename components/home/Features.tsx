@@ -196,13 +196,11 @@ function WorldsGrid ()
 
                 {/* Footer Fixed Action Area */ }
                 <div className="mt-auto shrink-0 pt-4">
-                    <Link
-                        href="/fieldsofactivity"
+                    <div
                         className="group/link inline-flex w-fit items-center gap-2 rounded-full font-mono text-[10px] font-black uppercase tracking-widest text-bms-primary outline-none focus-visible:ring-2 focus-visible:ring-bms-primary/50"
                     >
                         <span>Strategic Solutions</span>
-                        <LuArrowLeft className="h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-x-1" />
-                    </Link>
+                    </div>
                 </div>
             </div>
         </GlowCard>

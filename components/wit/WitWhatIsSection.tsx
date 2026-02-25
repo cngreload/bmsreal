@@ -100,9 +100,9 @@ export default function WitWhatIsSection ()
                         <div className="space-y-6 text-base md:text-lg leading-relaxed-corp text-slate-600 text-justify font-light">
                             <p>
                                 WIT یک زیرساخت فناورانه‌ی هسته‌ای است که محصولات کلیدی بارمان — از سامانه‌های
-                                <strong className="text-slate-900 font-bold mx-1">پایش صنعتی (ICTS)</strong>
+                                <q className="text-slate-900 font-bold mx-1">کنترل و مانیتورینگ صنعتی (ICTS)</q>
                                 تا پلتفرم
-                                <strong className="text-slate-900 font-bold mx-1">سلامت Clinicans</strong>
+                                <q className="text-slate-900 font-bold mx-1">سلامت کلینیکانز</q>
                                 — بر پایه آن بنا شده‌اند.
                             </p>
                             <p>

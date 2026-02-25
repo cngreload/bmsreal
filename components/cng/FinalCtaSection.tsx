@@ -161,27 +161,6 @@ export default function FinalCtaSection ()
                                         />
                                     </Link>
 
-                                    {/* Secondary Link: Glassmorphism */ }
-                                    <Link
-                                        href="/downloads/icts-intro.pdf"
-                                        target="_blank"
-                                        className="group flex w-full items-center justify-between gap-4 rounded-xl border border-white/10 bg-white/5 px-6 py-4 text-white transition-all hover:border-white/20 hover:bg-white/10 active:scale-95 sm:rounded-2xl sm:px-8 sm:py-5"
-                                    >
-                                        <div className="flex items-center gap-3 sm:gap-4">
-                                            <LuDownload
-                                                className="h-4 w-4 shrink-0 text-slate-400 sm:h-5 sm:w-5"
-                                                aria-hidden="true"
-                                            />
-                                            <span className="text-xs font-bold sm:text-sm">
-                                                دانلود مستند فنی و حاکمیتی
-                                            </span>
-                                        </div>
-                                        <LuArrowLeft
-                                            className="h-3 w-3 shrink-0 opacity-40 transition-all group-hover:opacity-100 sm:h-4 sm:w-4"
-                                            aria-hidden="true"
-                                        />
-                                    </Link>
-
                                     {/* Terminal Footer */ }
                                     <div className="flex flex-col items-center gap-2 px-4 py-3 sm:px-6 sm:py-4">
                                         <p className="text-center font-mono text-[9px] font-black uppercase tracking-[0.15em] text-slate-500 sm:text-[10px] sm:tracking-[0.2em]">

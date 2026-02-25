@@ -87,9 +87,9 @@ export default function WitBmsStorySection ()
                             </div>
                             <p className="text-base md:text-lg leading-corp-relaxed text-slate-500 font-light text-justify">
                                 با حضور عملی در حوزه انرژی و مدیریت ایستگاه‌های سوخت CNG در سطح ملی،
-                                <strong className="text-slate-900 font-bold mx-1">محدودیت‌های سیستم‌های سنتی</strong>
+                                <q className="text-slate-900 font-bold mx-1">محدودیت‌های سیستم‌های سنتی</q>
                                 را به‌وضوح درک کردیم. این تجربه میدانی، جرقه‌ای شد برای خلق پلتفرمی که توانمندی‌های نهفته‌ی عصر
-                                <span className="text-bms-primary font-medium mx-1 italic">هوش مصنوعی</span>
+                                <q className="text-bms-primary font-medium mx-1 italic">هوش مصنوعی</q>
                                 را در خدمت اتوماسیون واقعی قرار دهد.
                             </p>
                         </motion.div>
@@ -129,7 +129,7 @@ export default function WitBmsStorySection ()
                                     <LuTarget className="w-10 h-10 text-[#F4C430]" />
                                     <span className="text-[10px] font-mono font-bold text-white/40 uppercase tracking-widest">Mission_Statement</span>
                                 </div>
-                                <h3 className="text-2xl font-black">رسالت ما</h3>
+                                <h3 className="text-2xl text-[#F4C430]">رسالت ما</h3>
                                 <p className="text-blue-100/70 leading-relaxed-corp font-light text-justify">
                                     محقق ساختن رویای انسان مدرن برای <strong className="text-white font-bold">دسترسی کامل به تمام جنبه‌های دارایی‌هایش</strong> — اعم از کسب‌وکار، صنعت یا ملک — در هر زمان و مکان با بالاترین سطح امنیت و پایداری.
                                 </p>
@@ -155,7 +155,7 @@ export default function WitBmsStorySection ()
                                 <LuHistory className="w-6 h-6 text-slate-200" />
                             </div>
                             <p className="text-sm md:text-base leading-corp-relaxed text-slate-500 font-light mb-8">
-                                WIT صرفاً یک محصول نیست؛ یک <strong className="text-slate-950 font-bold">پلتفرم مادر</strong> است که برای هر صنعتی که به کارایی و راهکارهای هوشمند نیاز دارد، تخصصی‌سازی می‌شود.
+                                WIT صرفاً یک محصول نیست؛ یک <q className="text-slate-950 font-bold">پلتفرم مادر</q> است که برای هر صنعتی که به کارایی و راهکارهای هوشمند نیاز دارد، تخصصی‌سازی می‌شود.
                             </p>
                             <div className="flex items-center justify-between pt-6 border-t border-slate-50">
                                 <div className="flex items-center gap-4">
@@ -166,9 +166,9 @@ export default function WitBmsStorySection ()
                                 </div>
                                 <Link
                                     href="/clinicans"
-                                    className="group/link flex items-center gap-2 text-sm font-black text-bms-primary"
+                                    className="group/link flex items-center gap-2 text-sm font-black text-green-500"
                                 >
-                                    <span>بررسی Clinicans</span>
+                                    <span>ورود به کلینیکانز</span>
                                     <LuArrowLeft className="w-4 h-4 transition-transform group-hover/link:-translate-x-1" />
                                 </Link>
                             </div>
@@ -194,7 +194,7 @@ export default function WitBmsStorySection ()
                             { year: "۲۰۲۱", title: "تأسیس BMS", desc: "ورود به دنیای فناوری", icon: LuBuilding2 },
                             { year: "۲۰۲۲", title: "پلتفرم مادر", desc: "طراحی هسته WIT", icon: LuBinary },
                             { year: "۲۰۲۳", title: "پایلوت موفق", desc: "ICTS در CNG", icon: LuActivity },
-                            { year: "۲۰۲۴", title: "توسعه Clinicans", desc: "ورود به حوزه سلامت", icon: LuShieldCheck },
+                            { year: "۲۰۲۴", title: "توسعه کلینیکانز", desc: "ورود به حوزه سلامت", icon: LuShieldCheck },
                         ].map( ( item, index ) => (
                             <motion.div
                                 key={ index }

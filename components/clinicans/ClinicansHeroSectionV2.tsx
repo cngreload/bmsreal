@@ -94,19 +94,24 @@ export default function ClinicansHeroSectionV2 ()
                         {/* Actions */ }
                         <div className="flex flex-col sm:flex-row gap-5 pt-4">
                             <Link
-                                href="#features"
+                                href="https://clinicans.ir"
                                 className="inline-flex h-14 items-center justify-center gap-3 rounded-2xl bg-emerald-600 px-10 text-base font-bold text-white shadow-xl shadow-emerald-600/20 transition-all hover:-translate-y-1 hover:bg-emerald-700 active:scale-95"
                             >
-                                <span>مشاهده قابلیت‌ها</span>
-                                <LuArrowLeft className="h-4 w-4" />
+                                <span>ورود به کلینیکانز</span>
                             </Link>
 
                             <Link
-                                href="#pricing"
+                                href="#features"
                                 className="inline-flex h-14 items-center justify-center rounded-2xl border-2 border-slate-200 bg-white px-10 text-base font-bold text-slate-700 transition-all hover:bg-slate-50 hover:border-emerald-600 active:scale-95"
                             >
-                                شروع استفاده
+                                مشاهد قابلیت ها
+                                <span className="mx-2">
+
+                                    <LuArrowLeft className="h-4 w-4" />
+                                </span>
+
                             </Link>
+
                         </div>
 
                         {/* Scroll Hint */ }

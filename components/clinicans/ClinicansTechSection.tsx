@@ -109,7 +109,7 @@ export default function ClinicansTechSection ()
                     </h2>
 
                     <p className="max-w-3xl text-lg md:text-xl text-slate-500 font-light leading-relaxed text-justify">
-                        ما کلینیکانز را به عنوان یک <strong className="text-slate-900 font-bold">زیرساخت صنعتی-پزشکی</strong> مهندسی کرده‌ایم؛ پلتفرمی که امنیت، سرعت و پایداری لازم برای هوشمندسازی مراکز درمانی در مقیاس وسیع را فراهم می‌کند.
+                        ما کلینیکانز را به عنوان یک <q className="text-slate-900 font-bold">زیرساخت صنعتی-پزشکی</q> مهندسی کرده‌ایم؛ پلتفرمی که امنیت، سرعت و پایداری لازم برای هوشمندسازی مراکز درمانی در مقیاس وسیع را فراهم می‌کند.
                     </p>
                 </header>
 
@@ -201,9 +201,9 @@ export default function ClinicansTechSection ()
                                 </div>
 
                                 <p className="text-base md:text-lg text-blue-100/70 leading-relaxed-corp font-light text-justify">
-                                    زیرساخت فنی <strong className="text-white font-black mx-1 underline decoration-blue-500/30 underline-offset-8">کلینیکانز</strong>
+                                    زیرساخت فنی <q className="text-white font-black mx-1 underline decoration-blue-500/30 underline-offset-8">کلینیکانز</q>
                                     تضمین می‌کند که هوشمندسازی مجموعه‌ی شما با رشد مراجعین متوقف نشود. سیستم در
-                                    <span className="text-[#F4C430] font-medium italic mx-1">ساعات پیک ترافیک</span>
+                                    <q className="text-[#F4C430] font-medium italic mx-1">ساعات پیک ترافیک</q>
                                     پایدار می‌ماند و به سادگی با نیازهای آینده منطبق می‌شود؛ بدون نیاز به بازطراحی یا مهاجرت‌های پرهزینه.
                                 </p>
 

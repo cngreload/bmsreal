@@ -24,7 +24,7 @@ const DOCK_ITEMS: IDockItem[] = [
     { id: "overview", label: "معرفی", icon: LuHouse },
     { id: "features", label: "امکانات", icon: LuSparkles },
     { id: "audience", label: "مخاطبان", icon: LuUsers },
-    { id: "security-tech", label: "امنیت", icon: LuShieldCheck },
+    { id: "defense", label: "امنیت", icon: LuShieldCheck },
     { id: "pricing", label: "همکاری", icon: LuRocket },
 ];
 

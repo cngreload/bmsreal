@@ -55,7 +55,7 @@ export default function CngHeroSectionV2 ()
                                 className="text-4xl font-black leading-[1.2] tracking-tightest text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl"
                             >
                                 کنترل و پایش <br />
-                                <span className="text-bms-primary">هوشمند دیسپنسرها</span>
+                                <span className="text-bms-primary">هوشمند جایگاه های سوخت</span>
                             </h1>
                             {/* Industrial Red Accent Line */ }
                             <div className="h-1.5 w-24 rounded-full bg-brand-red shadow-[0_0_15px_rgba(215,38,56,0.2)]" />

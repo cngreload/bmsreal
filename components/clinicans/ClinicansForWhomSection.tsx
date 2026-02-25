@@ -237,24 +237,24 @@ export default function ClinicansForWhomSection ()
                                     یک چرخه هماهنگ ایجاد می‌کند؛ چرخه‌ای که نتیجه آن
                                     <span>
 
-                                        <strong className="mx-1 font-bold text-brand-yellow">
+                                        <q className="mx-1 font-bold text-brand-yellow">
                                             افزایش بازگشت مراجعان
-                                        </strong>
+                                        </q>
                                     </span>
                                     ،
                                     <span>
 
-                                        <strong className="mx-1 font-bold text-emerald-400">
+                                        <q className="mx-1 font-bold text-emerald-400">
                                             بهره‌وری عملیاتی بالاتر
-                                        </strong>
+                                        </q>
                                     </span>
 
                                     و
                                     <span>
 
-                                        <strong className="mx-1 font-bold text-blue-400">
+                                        <q className="mx-1 font-bold text-blue-400">
                                             رشد پایدار مرکز
-                                        </strong>
+                                        </q>
                                     </span>
                                     است.
                                 </p>

@@ -20,7 +20,7 @@ export default function CngPilotVideo ( {
     poster,
     ariaLabel = "ویدیوی گزارش پایلوت بارمان",
     title = "گزارش ویدیویی پایلوت اجرایی سامانه ICTS",
-    description = "مستندات تصویری استقرار، بهره‌برداری و پایش لحظه‌ای در فاز عملیاتی جایگاه‌های سوخت کشور.",
+    description = "مستندات رداری و پایش لحظه‌ای در فاز عملیاتی جایگاه‌های سوخت کشور.",
 }: CngPilotVideoProps )
 {
     const videoRef = useRef<HTMLVideoElement | null>( null );

@@ -99,44 +99,35 @@ export default function WitHeroSection ()
 
                     <div className="flex items-center gap-4 justify-start">
                         <div className="h-1.5 w-24 bg-[#D72638] rounded-full shadow-[0_0_15px_rgba(215,38,56,0.3)]" />
-                        <div className="flex items-center gap-2 text-sm font-bold text-slate-500 font-mono" dir="ltr">
-                            <LuDollarSign className="w-4 h-4 text-[#F4C430]" />
-                            <span>VALUATION: 100B IRR • TARGET: 20B IRR</span>
-                        </div>
+
                     </div>
                 </motion.div>
 
                 {/* 3. STRATEGIC DESCRIPTION */ }
                 <motion.div variants={ itemVariants } className="max-w-4xl space-y-10 text-right">
                     <p className="text-lg md:text-2xl leading-relaxed text-slate-600 font-light text-justify">
-                        <strong className="font-black text-slate-900 mx-1">BMS Co.</strong> با پلتفرم WIT، پیشروترین فناوری اتوماسیون هوشمند بومی را خلق کرده است. این فرصت به شما امکان می‌دهد در لایه‌ی زیرساختی شرکتی سرمایه‌گذاری کنید که رویای
-                        <span className="text-bms-primary font-bold mx-1 border-b-2 border-bms-primary/10">تسلط بر دارایی‌ها در عصر صنعت ۴.۰</span>
+                        <q className="font-black text-slate-900 mx-1">.BMS Co</q> با پلتفرم
+                        <q>
+                            WIT
+                        </q>
+                        ، پیشروترین فناوری اتوماسیون هوشمند بومی را خلق کرده است. این فرصت به شما امکان می‌دهد در لایه‌ی زیرساختی شرکتی سرمایه‌گذاری کنید که رویای
+                        <q className="text-bms-primary font-bold mx-1 border-b-2 border-bms-primary/10">تسلط بر دارایی‌ها در عصر صنعت ۴.۰</q>
                         را محقق ساخته و پتانسیل رشد تصاعدی در بازارهای منطقه‌ای را دارد.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-5 justify-start">
                         <Link
-                            href="#story"
+                            href="/about/story"
                             className="group relative inline-flex items-center justify-center gap-3 rounded-2xl bg-bms-primary px-8 py-4 text-base font-bold text-white shadow-2xl shadow-bms-primary/30 transition-all hover:-translate-y-1 active:scale-95"
                         >
                             <span>کشف داستان BMS</span>
                             <LuArrowLeft className="w-5 h-5 transition-transform group-hover:-translate-x-1" />
                         </Link>
 
-                        <Link
-                            href="/investors/deck.pdf"
-                            className="inline-flex items-center gap-3 rounded-2xl border-2 border-slate-200 bg-white px-8 py-4 text-base font-bold text-slate-700 transition-all hover:bg-slate-50 hover:border-bms-primary active:scale-95"
-                            target="_blank"
-                        >
-                            <LuDollarSign className="w-5 h-5 text-[#F4C430]" />
-                            <span>دانلود Pitch Deck</span>
-                        </Link>
+
                     </div>
 
-                    <div className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#D72638] animate-pulse" />
-                        زمان محدود: فرصت مشارکت در راند فعلی تا پایان فصل مالی
-                    </div>
+
                 </motion.div>
 
                 {/* 4. PERFORMANCE GRID */ }
@@ -147,7 +138,6 @@ export default function WitHeroSection ()
 
                     <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" role="list">
                         { [
-                            { icon: LuTrendingUp, text: "رشد ۲۰۰٪ درآمد سالانه", color: "text-emerald-500", bg: "bg-emerald-50", border: "border-emerald-100" },
                             { icon: LuShield, text: "فناوری بومی ثبت‌شده", color: "text-[#145C98]", bg: "bg-blue-50", border: "border-blue-100" },
                             { icon: LuZap, text: "پتانسیل توسعه منطقه‌ای", color: "text-[#F4C430]", bg: "bg-amber-50", border: "border-amber-100" },
                             { icon: LuActivity, text: "تیم اجرایی متخصص", color: "text-[#D72638]", bg: "bg-red-50", border: "border-red-100" },
@@ -181,12 +171,7 @@ export default function WitHeroSection ()
                         </span>
                     </div>
 
-                    <div className="flex items-center gap-8 text-[11px] font-black text-slate-600">
-                        <div className="flex items-center gap-2 group cursor-pointer hover:text-indigo-600 transition-colors">
-                            <span>مدیر سرمایه‌گذاری:</span>
-                            <a href="tel:+982188776655" className="font-mono">۰۲۱-۸۸۷۷۶۶۵۵</a>
-                        </div>
-                    </div>
+
                 </motion.footer>
 
             </motion.div>

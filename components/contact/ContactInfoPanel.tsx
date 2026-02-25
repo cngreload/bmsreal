@@ -124,7 +124,7 @@ export default function ContactInfoPanel ()
                 </p>
 
                 <Link
-                    href="/cooperation"
+                    href="/intelligentautomation"
                     className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/10 px-4 py-2.5 text-xs font-bold text-white transition-colors hover:bg-white/20"
                     aria-label="ورود به صفحه همکاری و سرمایه‌گذاری"
                 >

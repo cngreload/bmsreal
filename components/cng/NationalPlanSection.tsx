@@ -109,9 +109,9 @@ export default function NationalPlanSection ()
                         <div className="h-1 w-12 bg-[#F4C430] mx-auto rounded-full" />
                         <p className="text-lg md:text-2xl leading-corp-relaxed font-medium text-slate-700">
                             هوشمندسازی جایگاه‌های CNG یک پروژه انتخابی نیست؛ بلکه سازوکاری اجرایی برای تحقق هم‌زمان
-                            <span className="text-bms-primary font-black mx-2 text-xl md:text-3xl">امنیت انرژی</span>،
-                            <span className="text-[#D72638] font-black mx-2 text-xl md:text-3xl">ایمنی عمومی</span> و
-                            <span className="text-slate-900 font-black mx-2 text-xl md:text-3xl">کارآمدی اقتصادی</span>
+                            <q className="text-bms-primary font-black mx-2 text-xl md:text-3xl">امنیت انرژی</q>،
+                            <q className="text-[#D72638] font-black mx-2 text-xl md:text-3xl">ایمنی عمومی</q> و
+                            <q className="text-slate-900 font-black mx-2 text-xl md:text-3xl">کارآمدی اقتصادی</q>
                             است.
                         </p>
                         <div className="pt-4 flex justify-center gap-6 text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">

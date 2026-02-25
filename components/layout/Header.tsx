@@ -21,7 +21,10 @@ import
     LuPhone,
     LuNewspaper,
     LuHouse,
+    LuPlus,
+    LuHeartPulse,
 } from 'react-icons/lu';
+import Image from 'next/image';
 
 /* --- 1. HUMAN-CENTRIC NAV DATA --- */
 
@@ -278,11 +281,7 @@ export default function Header ()
                             aria-label="صفحه اصلی بارمان"
                         >
                             <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-bms-primary to-blue-800 p-0.5 shadow-md transition-all duration-300 group-hover:shadow-lg group-hover:shadow-blue-600/20 md:h-12 md:w-12">
-                                <div className="flex h-full w-full items-center justify-center rounded-[10px] bg-white">
-                                    <span className="text-2xl font-black tracking-tighter text-bms-primary">
-                                        B
-                                    </span>
-                                </div>
+                                <Image src="/bmslogoclean.webp" alt="bmslogo" width={ 300 } height={ 300 } />
                             </div>
                             <div className="hidden leading-tight md:block">
                                 <div className="text-base font-bold tracking-tight text-slate-900">
@@ -337,7 +336,7 @@ export default function Header ()
                                 ) }
                             >
                                 <LuNewspaper className="h-4 w-4 shrink-0" aria-hidden="true" />
-                                <span>مجله</span>
+                                <span>اخبار</span>
                             </Link>
                         </nav>
 
@@ -433,7 +432,26 @@ export default function Header ()
                                         className="h-5 w-5 shrink-0"
                                         aria-hidden="true"
                                     />
-                                    <span>مجله خبری</span>
+                                    <span>اخبار
+                                    </span>
+                                </Link>
+
+                                <Link
+                                    href="https://clinicans.ir"
+                                    className={ cn(
+                                        'flex items-center bg-green-600 gap-3.5 rounded-2xl px-5 py-4 text-base font-semibold outline-none transition-all duration-200 focus-visible:ring-2 focus-visible:ring-bms-primary/50',
+                                        pathname.startsWith( '/news' )
+                                            ? 'bg-bms-primary-soft text-bms-primary'
+                                            : 'text-slate-800 hover:bg-slate-50'
+                                    ) }
+                                    onClick={ () => setMobileOpen( false ) }
+                                >
+                                    <LuHeartPulse
+                                        className="h-5 w-5 shrink-0"
+                                        aria-hidden="true"
+                                    />
+                                    <span>ورود به کلینیکانز
+                                    </span>
                                 </Link>
                             </nav>
 

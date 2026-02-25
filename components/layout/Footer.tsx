@@ -11,7 +11,7 @@ import
     LuArrowUpLeft,
 } from "react-icons/lu";
 import type { ElementType } from "react";
-import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 /* --- TYPES --- */
 
@@ -55,7 +55,7 @@ export default function Footer ()
                             aria-label="صفحه اصلی بارمان"
                         >
                             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-bms-primary text-xl font-bold text-white shadow-md">
-                                B
+                                <Image src="/bmslogoclean.webp" alt="footorlogo" width={ 600 } height={ 600 } />
                             </div>
                             <span className="text-xl font-black tracking-tight text-slate-900">
                                 بارمان محور
@@ -175,21 +175,7 @@ export default function Footer ()
                     <p className="text-center text-[11px] font-medium text-slate-400 sm:text-right">
                         © { currentYear } بارمان محور اسپادانا. تمامی حقوق محفوظ است.
                     </p>
-                    <div className="flex flex-wrap items-center justify-center gap-4 text-[11px] font-medium text-slate-500 sm:gap-6">
-                        <Link
-                            href="/privacy-policy"
-                            className="rounded-md outline-none transition-colors hover:text-bms-primary focus-visible:ring-2 focus-visible:ring-bms-primary/50"
-                        >
-                            حریم خصوصی
-                        </Link>
-                        <span className="h-3 w-px bg-slate-200" aria-hidden="true" />
-                        <Link
-                            href="/terms-of-service"
-                            className="rounded-md outline-none transition-colors hover:text-bms-primary focus-visible:ring-2 focus-visible:ring-bms-primary/50"
-                        >
-                            شرایط استفاده
-                        </Link>
-                    </div>
+
                 </div>
             </div>
         </footer>
