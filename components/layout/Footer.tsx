@@ -42,11 +42,12 @@ export default function Footer ()
         <footer
             className="mt-auto border-t border-slate-200 bg-white text-right"
             role="contentinfo"
+            dir="rtl"
         >
-            <div className="container py-12 md:py-16 lg:py-20">
+            <div className="container mx-auto py-12 md:py-16 lg:py-20">
                 <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
 
-                    {/* BRAND COLUMN */ }
+                    {/* ===================== BRAND COLUMN ===================== */ }
                     <div className="flex flex-col space-y-6 sm:col-span-2 lg:col-span-4">
                         <Link
                             href="/"
@@ -61,10 +62,10 @@ export default function Footer ()
                             </span>
                         </Link>
 
-                        <p className="pl-4 text-sm leading-8 text-slate-600 md:text-base md:leading-8">
-                            ما اینجا هستیم تا فاصله بین «داده‌های میدانی» و «آرامش مدیریتی»
-                            را پر کنیم. تکنولوژی برای ما ابزار است، نه هدف؛ هدف، ساختن
-                            زیرساخت‌هایی است که امن، پایدار و انسانی باشند.
+                        <p className="pl-4 text-justify text-sm font-light leading-relaxed text-slate-600 md:text-base">
+                            ما اینجا هستیم تا فاصله بین «داده‌های میدانی» و «آرامش مدیریتی» را پر
+                            کنیم. تکنولوژی برای ما ابزار است، نه هدف؛ هدف، ساختن زیرساخت‌هایی است
+                            که امن، پایدار و انسانی باشند.
                         </p>
 
                         <div className="flex gap-3 pt-2">
@@ -81,7 +82,7 @@ export default function Footer ()
                         </div>
                     </div>
 
-                    {/* PRODUCTS COLUMN */ }
+                    {/* ===================== PRODUCTS COLUMN ===================== */ }
                     <div className="lg:col-span-3 lg:col-start-6">
                         <h4 className="mb-6 text-sm font-bold text-slate-900">محصولات</h4>
                         <ul className="space-y-4" role="list">
@@ -89,7 +90,7 @@ export default function Footer ()
                                 <li key={ link.href }>
                                     <Link
                                         href={ link.href }
-                                        className="group flex w-fit items-center gap-1.5 rounded-md text-sm text-slate-600 outline-none transition-colors hover:text-bms-primary focus-visible:ring-2 focus-visible:ring-bms-primary/50"
+                                        className="group flex w-fit items-center gap-1.5 rounded-md text-sm font-medium text-slate-600 outline-none transition-colors hover:text-bms-primary focus-visible:ring-2 focus-visible:ring-bms-primary/50"
                                     >
                                         <span>{ link.label }</span>
                                         <LuArrowUpLeft
@@ -102,7 +103,7 @@ export default function Footer ()
                         </ul>
                     </div>
 
-                    {/* COMPANY COLUMN */ }
+                    {/* ===================== COMPANY COLUMN ===================== */ }
                     <div className="lg:col-span-2">
                         <h4 className="mb-6 text-sm font-bold text-slate-900">گشت و گذار</h4>
                         <ul className="space-y-4" role="list">
@@ -110,7 +111,7 @@ export default function Footer ()
                                 <li key={ link.href }>
                                     <Link
                                         href={ link.href }
-                                        className="block w-fit rounded-md text-sm text-slate-600 outline-none transition-colors hover:text-bms-primary focus-visible:ring-2 focus-visible:ring-bms-primary/50"
+                                        className="block w-fit rounded-md text-sm font-medium text-slate-600 outline-none transition-colors hover:text-bms-primary focus-visible:ring-2 focus-visible:ring-bms-primary/50"
                                     >
                                         { link.label }
                                     </Link>
@@ -119,7 +120,7 @@ export default function Footer ()
                         </ul>
                     </div>
 
-                    {/* CONTACT WIDGET COLUMN */ }
+                    {/* ===================== CONTACT WIDGET COLUMN ===================== */ }
                     <div className="sm:col-span-2 lg:col-span-4 xl:col-span-3">
                         <div className="space-y-5 rounded-2xl border border-slate-100 bg-slate-50 p-6">
                             <h4 className="text-sm font-bold text-slate-900">هم‌صحبت شویم</h4>
@@ -131,7 +132,7 @@ export default function Footer ()
                                     aria-label="تماس تلفنی با بارمان"
                                 >
                                     <span
-                                        className="text-sm font-medium transition-all group-hover:font-bold"
+                                        className="font-mono text-sm font-medium transition-all group-hover:font-bold"
                                         dir="ltr"
                                     >
                                         021-66463924
@@ -145,7 +146,7 @@ export default function Footer ()
                                     aria-label="ارسال ایمیل به بارمان"
                                 >
                                     <span
-                                        className="text-sm font-medium transition-all group-hover:font-bold"
+                                        className="font-mono text-sm font-medium transition-all group-hover:font-bold"
                                         dir="ltr"
                                     >
                                         info@co-bms.ir
@@ -156,7 +157,7 @@ export default function Footer ()
 
                             <div className="border-t border-slate-200 pt-4">
                                 <div className="flex items-start justify-end gap-3">
-                                    <address className="text-xs font-medium leading-6 text-slate-500 not-italic">
+                                    <address className="text-xs font-medium leading-relaxed text-slate-500 not-italic">
                                         تهران، بلوار کشاورز، وصال شیرازی، پلاک ۵۷
                                     </address>
                                     <LuMapPin
@@ -169,7 +170,7 @@ export default function Footer ()
                     </div>
                 </div>
 
-                {/* COPYRIGHT BOTTOM BAR */ }
+                {/* ===================== COPYRIGHT BOTTOM BAR ===================== */ }
                 <div className="mt-12 flex flex-col-reverse items-center justify-between gap-4 border-t border-slate-100 pt-8 sm:flex-row sm:gap-6 md:mt-16">
                     <p className="text-center text-[11px] font-medium text-slate-400 sm:text-right">
                         © { currentYear } بارمان محور اسپادانا. تمامی حقوق محفوظ است.
@@ -195,7 +196,9 @@ export default function Footer ()
     );
 }
 
-/* --- HELPERS --- */
+/* ============================================================================
+   HELPERS
+   ============================================================================ */
 
 interface SocialLinkProps
 {
@@ -212,9 +215,9 @@ function SocialLink ( { href, icon: Icon, label }: SocialLinkProps )
             target="_blank"
             rel="noopener noreferrer"
             aria-label={ label }
-            className="group flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-400 outline-none transition-all duration-300 hover:border-slate-900 hover:bg-slate-900 hover:text-white focus-visible:ring-2 focus-visible:ring-bms-primary/50"
+            className="group flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-400 outline-none transition-all duration-300 hover:border-slate-900 hover:bg-slate-900 hover:text-white focus-visible:ring-2 focus-visible:ring-bms-primary/50"
         >
-            <Icon className="h-4 w-4 shrink-0 transition-transform group-hover:scale-110" />
+            <Icon className="h-4 w-4 shrink-0 transition-transform group-hover:scale-110" aria-hidden="true" />
         </a>
     );
 }
@@ -231,7 +234,7 @@ function IconBox ( { icon: Icon }: IconBoxProps )
             className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-400 shadow-sm transition-colors group-hover:border-bms-primary group-hover:text-bms-primary"
             aria-hidden="true"
         >
-            <Icon className="h-4 w-4" />
+            <Icon className="h-4 w-4 shrink-0" />
         </div>
     );
 }

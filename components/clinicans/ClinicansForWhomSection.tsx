@@ -25,14 +25,14 @@ const personas = [
     {
         id: "managers",
         role: "Strategic_Control",
-        title: "مدیران و مالکان مراکز سلامت",
+        title: "مدیران و مالکان",
         subtitle: "کنترل، رشد و تصمیم‌گیری مبتنی بر داده",
         summary:
             "برای مدیرانی که می‌خواهند رشد را حدس نزنند، بلکه آن را اندازه‌گیری و هدایت کنند.",
         icon: LuBriefcase,
-        color: "text-[#145C98]",
+        color: "text-bms-primary", // Translated static '#145C98' to global tag
         bg: "bg-blue-50",
-        border: "group-hover:border-[#145C98]/30",
+        border: "group-hover:border-bms-primary/30",
         benefits: [
             "نمای یکپارچه از درآمد، ظرفیت و عملکرد واقعی مرکز",
             "گزارش‌های تحلیلی برای تصمیم‌گیری راهبردی و توسعه پایدار",
@@ -47,7 +47,7 @@ const personas = [
         summary:
             "برای درمانگرانی که می‌خواهند زمان و انرژی خود را صرف بیمار کنند، نه مدیریت فرآیندها.",
         icon: LuStethoscope,
-        color: "text-[#10B981]",
+        color: "text-emerald-600",
         bg: "bg-emerald-50",
         border: "group-hover:border-emerald-200",
         benefits: [
@@ -64,7 +64,7 @@ const personas = [
         summary:
             "برای تیم‌هایی که قلب تپنده نظم مرکز هستند و به ابزار دقیق برای مدیریت جریان مراجعین نیاز دارند.",
         icon: LuCalendarCheck,
-        color: "text-[#F4C430]",
+        color: "text-brand-yellow", // Translated '#F4C430'
         bg: "bg-amber-50",
         border: "group-hover:border-amber-200",
         benefits: [
@@ -81,7 +81,7 @@ const personas = [
         summary:
             "برای بیمارانی که انتظار دارند خدمات سلامت را شفاف، دقیق و محترمانه دریافت کنند.",
         icon: LuHeartHandshake,
-        color: "text-[#D72638]",
+        color: "text-brand-red", // Translated '#D72638'
         bg: "bg-red-50",
         border: "group-hover:border-red-200",
         benefits: [
@@ -97,41 +97,42 @@ export default function ClinicansForWhomSection ()
     return (
         <section
             id="clinicans-for-whom"
-            className="relative py-20 lg:py-32 bg-white overflow-hidden"
+            className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-32"
             aria-labelledby="audience-heading"
             dir="rtl"
         >
             {/* Background HUD Graphics */ }
-            <div className="absolute top-0 right-0 p-12 opacity-[0.02] pointer-events-none hidden lg:block">
-                <LuFingerprint className="w-80 h-80 text-bms-primary" />
+            <div className="pointer-events-none absolute right-0 top-0 p-12 opacity-[0.02]" aria-hidden="true">
+                <LuFingerprint className="hidden h-80 w-80 text-bms-primary lg:block" />
             </div>
 
-            <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12">
+            <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+
                 {/* ===================== HEADER ===================== */ }
-                <header className="mb-20 text-right space-y-4 max-w-4xl">
+                <header className="mb-12 space-y-6 text-right sm:mb-16 lg:mb-20">
                     <motion.div
                         initial={ { opacity: 0, x: 20 } }
                         whileInView={ { opacity: 1, x: 0 } }
                         viewport={ { once: true } }
-                        className="inline-flex items-center gap-2 rounded-lg bg-slate-50 border border-slate-200 px-3 py-1 shadow-sm"
+                        className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-4 py-1.5 shadow-sm"
                     >
-                        <LuUser className="h-3.5 w-3.5 text-slate-400" />
-                        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">
+                        <LuUser className="h-4 w-4 shrink-0 text-slate-400" aria-hidden="true" />
+                        <span className="font-mono text-[9px] font-black uppercase tracking-[0.3em] text-slate-500 sm:text-[10px]">
                             Stakeholder_Access / Clinicans
                         </span>
                     </motion.div>
 
                     <h2
                         id="audience-heading"
-                        className="text-3xl md:text-5xl lg:text-6xl font-black text-slate-950 leading-[1.1] tracking-tightest"
+                        className="max-w-4xl text-3xl font-black leading-[1.2] tracking-tightest text-slate-950 sm:text-4xl md:text-5xl lg:text-6xl"
                     >
                         کلینیکانز برای چه کسانی <br />
-                        <span className="text-bms-primary underline decoration-bms-primary/10 underline-offset-8">
+                        <span className="text-bms-primary underline decoration-bms-primary/10 decoration-4 underline-offset-8">
                             ارزش خلق می‌کند؟
                         </span>
                     </h2>
 
-                    <p className="max-w-3xl text-base md:text-lg text-slate-500 font-light leading-relaxed">
+                    <p className="max-w-3xl text-sm font-light leading-relaxed text-slate-500 sm:text-base md:text-lg">
                         این پلتفرم یک ابزار عمومی نیست؛ بلکه زیرساختی نقش‌محور است که برای
                         هر جایگاه در چرخه ارائه خدمات سلامت، تجربه‌ای متناسب و هدفمند
                         طراحی کرده است.
@@ -139,7 +140,7 @@ export default function ClinicansForWhomSection ()
                 </header>
 
                 {/* ===================== PERSONA NODES ===================== */ }
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
                     { personas.map( ( persona, index ) =>
                     {
                         const Icon = persona.icon;
@@ -151,48 +152,49 @@ export default function ClinicansForWhomSection ()
                                 viewport={ { once: true } }
                                 transition={ { duration: 0.6, delay: index * 0.1 } }
                                 className={ cn(
-                                    "group relative flex flex-col h-full rounded-[2.5rem] bg-white border border-slate-200 p-8 shadow-sm transition-all duration-500 hover:shadow-premium",
+                                    "group relative flex h-full flex-col rounded-[2.5rem] border border-slate-200 bg-white p-6 shadow-sm transition-all duration-500 hover:shadow-premium sm:p-8",
                                     persona.border
                                 ) }
                             >
-                                <div className="mb-6 flex flex-col items-center text-center gap-4">
+                                <div className="mb-6 flex flex-col items-center gap-4 text-center">
                                     <div
                                         className={ cn(
-                                            "flex h-16 w-16 items-center justify-center rounded-2xl shadow-inner transition-transform duration-500 group-hover:scale-110",
+                                            "flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl shadow-inner transition-transform duration-500 group-hover:scale-110 sm:h-16 sm:w-16",
                                             persona.bg,
                                             persona.color
                                         ) }
                                     >
-                                        <Icon className="h-8 w-8" />
+                                        <Icon className="h-6 w-6 sm:h-8 sm:w-8" aria-hidden="true" />
                                     </div>
 
                                     <div className="space-y-1">
-                                        <h3 className="text-lg font-black text-slate-950 group-hover:text-bms-primary transition-colors">
+                                        <h3 className="text-base font-black text-slate-950 transition-colors group-hover:text-bms-primary sm:text-lg">
                                             { persona.title }
                                         </h3>
-                                        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest font-mono">
+                                        <p className="font-mono text-[9px] font-bold uppercase tracking-widest text-slate-400 sm:text-[10px]">
                                             { persona.role }
                                         </p>
                                     </div>
                                 </div>
 
-                                <p className="mb-6 text-xs leading-6 text-center text-slate-500 font-medium italic">
+                                <p className="mb-6 text-center text-xs font-medium italic leading-6 text-slate-500">
                                     { persona.summary }
                                 </p>
 
-                                <ul className="flex-1 space-y-4 border-t border-slate-50 pt-6">
+                                <ul className="flex flex-1 flex-col space-y-4 border-t border-slate-50 pt-6">
                                     { persona.benefits.map( ( item, idx ) => (
                                         <li key={ idx } className="flex items-start gap-3">
                                             <div
                                                 className={ cn(
-                                                    "mt-1 flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full",
+                                                    "mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full sm:mt-1",
                                                     persona.bg,
                                                     persona.color
                                                 ) }
+                                                aria-hidden="true"
                                             >
-                                                <LuCheck className="h-3 w-3" />
+                                                <LuCheck className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
                                             </div>
-                                            <span className="text-xs leading-5 text-slate-600 font-light">
+                                            <span className="text-xs font-light leading-snug text-slate-600 sm:text-[13px] sm:leading-6 md:leading-relaxed">
                                                 { item }
                                             </span>
                                         </li>
@@ -204,35 +206,55 @@ export default function ClinicansForWhomSection ()
                 </div>
 
                 {/* ===================== SUMMARY BLOCK ===================== */ }
-                <div className="mt-20 lg:mt-32 flex justify-center">
-                    <aside className="relative overflow-hidden rounded-[3rem] bg-slate-950 p-1 shadow-2xl max-w-5xl w-full mx-4">
-                        <div className="absolute inset-0 opacity-10 [background-image:radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]" />
+                <div className="mt-16 flex w-full justify-center sm:mt-20 lg:mt-32">
+                    <aside className="relative w-full max-w-5xl overflow-hidden rounded-[2.5rem] bg-slate-950 p-1 shadow-2xl sm:rounded-[3rem]">
+                        {/* Background Texture */ }
+                        <div
+                            className="pointer-events-none absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] bg-[size:20px_20px]"
+                            aria-hidden="true"
+                        />
 
-                        <div className="relative flex flex-col md:flex-row items-center gap-8 md:gap-12 rounded-[2.95rem] bg-slate-950 px-8 py-10 md:px-14">
-                            <div className="flex-shrink-0 relative group">
-                                <div className="absolute inset-0 bg-bms-primary/40 rounded-3xl blur-2xl group-hover:blur-3xl transition-all" />
-                                <div className="relative flex h-24 w-24 items-center justify-center rounded-3xl bg-white/5 text-[#F4C430] shadow-2xl border border-white/10 backdrop-blur-md">
-                                    <LuVenetianMask className="h-12 w-12 animate-float" />
+                        <div className="relative flex flex-col items-center gap-8 rounded-[2.4rem] bg-slate-950 px-6 py-10 md:flex-row md:gap-12 md:px-10 lg:px-14 sm:rounded-[2.9rem]">
+
+                            {/* Graphic Focal Point */ }
+                            <div className="group relative shrink-0">
+                                <div
+                                    className="absolute inset-0 rounded-3xl bg-bms-primary/40 blur-2xl transition-all group-hover:blur-3xl"
+                                    aria-hidden="true"
+                                />
+                                <div className="relative flex h-20 w-20 items-center justify-center rounded-3xl border border-white/10 bg-white/5 shadow-2xl backdrop-blur-md sm:h-24 sm:w-24">
+                                    <LuVenetianMask className="h-10 w-10 animate-float text-brand-yellow sm:h-12 sm:w-12" aria-hidden="true" />
                                 </div>
                             </div>
 
-                            <div className="flex-1 text-center md:text-right space-y-4">
-                                <h4 className="text-xl md:text-2xl font-black text-white">
+                            {/* Concluding Narrative */ }
+                            <div className="flex-1 space-y-4 text-center md:text-right">
+                                <h4 className="text-lg font-black leading-tight text-white sm:text-xl md:text-2xl">
                                     زیرساختی که نقش‌ها را به رشد متصل می‌کند
                                 </h4>
-                                <p className="text-sm md:text-base text-slate-300 leading-8 text-justify font-light opacity-90">
+                                <p className="text-justify text-sm font-light leading-loose text-slate-300 opacity-90 sm:text-base sm:leading-8">
                                     کلینیکانز با هم‌راستا کردن مدیریت، تیم درمان و تجربه بیمار،
                                     یک چرخه هماهنگ ایجاد می‌کند؛ چرخه‌ای که نتیجه آن
-                                    <span className="text-[#F4C430] font-bold mx-1">
-                                        افزایش بازگشت مراجعان
+                                    <span>
+
+                                        <strong className="mx-1 font-bold text-brand-yellow">
+                                            افزایش بازگشت مراجعان
+                                        </strong>
                                     </span>
                                     ،
-                                    <span className="text-emerald-400 font-bold mx-1">
-                                        بهره‌وری عملیاتی بالاتر
+                                    <span>
+
+                                        <strong className="mx-1 font-bold text-emerald-400">
+                                            بهره‌وری عملیاتی بالاتر
+                                        </strong>
                                     </span>
+
                                     و
-                                    <span className="text-blue-400 font-bold mx-1">
-                                        رشد پایدار مرکز
+                                    <span>
+
+                                        <strong className="mx-1 font-bold text-blue-400">
+                                            رشد پایدار مرکز
+                                        </strong>
                                     </span>
                                     است.
                                 </p>
@@ -240,6 +262,7 @@ export default function ClinicansForWhomSection ()
                         </div>
                     </aside>
                 </div>
+
             </div>
         </section>
     );

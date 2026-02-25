@@ -8,6 +8,7 @@ import WitSection from "@/components/home/WitSection";
 import ProductBands from "@/components/home/ProductBands";
 import NewsPreview from "@/components/news/NewsPreview";
 import { Section } from "@/components/layout/Section";
+import FeaturesGrid from "@/components/home/Features";
 
 export const metadata: Metadata = {
   title: "بارمان | تکنولوژی برای زندگی امن‌تر و هوشمندتر",
@@ -22,10 +23,7 @@ export default function HomePage ()
       {/* CHAPTER 1: HERO - Full Viewport Authority */ }
       <Hero />
 
-      {/* CHAPTER 2: THE BENTO GRID (TECHNICAL MOAT) 
-          Mobile: Stacked cards with simplified padding.
-          Desktop: 3x2 High-density technical schematic.
-      */}
+      {/* CHAPTER 2: THE BENTO GRID (TECHNICAL MOAT) */ }
       <Section variant="white" spacing="large" id="technical-moat">
         <header className="mb-12 space-y-6 text-right lg:mb-16 lg:text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-1.5 shadow-sm">
@@ -41,20 +39,9 @@ export default function HomePage ()
           </p>
         </header>
 
+        {/* Using the massive new 3D Bento Grid */ }
         <div className="relative z-30">
-          <div className="relative overflow-hidden rounded-[2rem] border border-slate-100 bg-white shadow-premium ring-1 ring-black/5 lg:rounded-[4rem]">
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              <div className="border-b border-slate-100 lg:border-b-0 lg:border-l">
-                <WorldsGrid />
-              </div>
-              <div className="bg-slate-50/30">
-                <TechStrip />
-              </div>
-              <div className="border-t border-slate-100 lg:col-span-2">
-                <WitSection />
-              </div>
-            </div>
-          </div>
+          <FeaturesGrid />
         </div>
       </Section>
 

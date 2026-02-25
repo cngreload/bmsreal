@@ -121,21 +121,7 @@ export default function ClinicansPage ()
                 </div>
             </Section>
 
-            {/* CHAPTER 2: MODULES - Visualizing the Platform components */ }
-            <Section
-                variant="subtle"
-                spacing="large"
-                id="features"
-                className="mt-16 border-y border-slate-100"
-            >
-                <div className="space-y-16 hidden">
-                    <ClinicansSystemCarousel />
-                    <div className="container mx-auto max-w-5xl py-10">
-                        <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" aria-hidden="true" />
-                    </div>
-                    <ClinicansSystemTabs />
-                </div>
-            </Section>
+
 
             {/* CHAPTER 3: IMMERSIVE - Specialists Focus */ }
 

@@ -11,16 +11,17 @@ import
     LuScale,
     LuShieldCheck,
     LuNetwork,
-    LuArrowLeft
+    LuArrowLeft,
 } from "react-icons/lu";
 
 // 🧠 CRAWLER EMPATHY: Metadata with E-E-A-T keywords
 export const metadata: Metadata = {
     title: "درباره ما | شرکت دانش‌بنیان بارمان محور اسپادانا",
-    description: "با داستان، ماموریت، ارزش‌ها و تیم شرکت دانش‌بنیان بارمان محور اسپادانا آشنا شوید. پیشگام در هوشمندسازی صنعتی، انرژی و سلامت.",
+    description:
+        "با داستان، ماموریت، ارزش‌ها و تیم شرکت دانش‌بنیان بارمان محور اسپادانا آشنا شوید. پیشگام در هوشمندسازی صنعتی، انرژی و سلامت.",
     alternates: {
         canonical: "https://co-bms.ir/about",
-    }
+    },
 };
 
 // 🧠 CRAWLER EMPATHY: Iconography added to data for visual anchoring
@@ -75,10 +76,15 @@ export default function AboutOverviewPage ()
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "خانه", "item": "https://co-bms.ir" },
-            { "@type": "ListItem", "position": 2, "name": "درباره ما", "item": "https://co-bms.ir/about" }
-        ]
+        itemListElement: [
+            { "@type": "ListItem", position: 1, name: "خانه", item: "https://co-bms.ir" },
+            {
+                "@type": "ListItem",
+                position: 2,
+                name: "درباره ما",
+                item: "https://co-bms.ir/about",
+            },
+        ],
     };
 
     return (
@@ -88,68 +94,73 @@ export default function AboutOverviewPage ()
                 type="application/ld+json"
                 dangerouslySetInnerHTML={ { __html: JSON.stringify( jsonLd ) } }
             />
-            <div id="main-content" className="bg-slate-50 min-h-screen">
-                <div className="container mx-auto max-w-6xl px-4 py-12 md:py-20 space-y-16">
+            <div className="space-y-12 md:space-y-16 lg:space-y-20">
 
-                    {/* Hero Section */ }
-                    <section className="text-center space-y-4" aria-labelledby="about-heading">
-                        <div className="flex justify-center">
-                            <span className="inline-block rounded-lg bg-bms-primary/10 px-3 py-1 text-xs font-bold text-bms-primary border border-bms-primary/20">
-                                هویت و چشم‌انداز
-                            </span>
-                        </div>
-                        <h1 id="about-heading" className="text-3xl font-bold text-bms-dark md:text-4xl lg:text-5xl tracking-tight">
-                            درباره <span className="text-bms-primary">بارمان محور اسپادانا</span>
-                        </h1>
-                        <p className="mx-auto max-w-3xl text-sm leading-8 text-slate-600 md:text-base">
-                            ما یک شرکت <strong className="text-slate-900">دانش‌بنیان</strong> و فناوری‌محور هستیم که با ترکیب تجربه میدانی و مهندسی پیشرفته،
-                            راهکارهای بومی برای هوشمندسازی صنعت، انرژی و سلامت ایران توسعه می‌دهیم.
-                        </p>
-                    </section>
+                {/* Hero Section */ }
+                <section className="space-y-6 text-center" aria-labelledby="about-heading">
+                    <div className="flex justify-center">
+                        <span className="inline-flex items-center gap-2 rounded-full border border-bms-primary/20 bg-bms-primary-soft px-4 py-1.5 font-mono text-[10px] font-black uppercase tracking-widest text-bms-primary">
+                            هویت و چشم‌انداز
+                        </span>
+                    </div>
+                    <h1
+                        id="about-heading"
+                        className="text-4xl font-black leading-[1.2] tracking-tightest text-slate-900 md:text-5xl lg:text-6xl"
+                    >
+                        درباره <span className="text-bms-primary">بارمان محور اسپادانا</span>
+                    </h1>
+                    <p className="mx-auto max-w-3xl text-base font-light leading-relaxed text-slate-600 md:text-lg">
+                        ما یک شرکت <strong className="font-bold text-slate-900">دانش‌بنیان</strong> و
+                        فناوری‌محور هستیم که با ترکیب تجربه میدانی و مهندسی پیشرفته، راهکارهای
+                        بومی برای هوشمندسازی صنعت، انرژی و سلامت ایران توسعه می‌دهیم.
+                    </p>
+                </section>
 
-                    {/* 
-                      🎨 UX & 🧠 SEO: A semantic list of navigation cards
-                      Each card is a distinct, scannable entity.
-                    */}
-                    <section aria-labelledby="about-pillars-heading">
-                        <h2 id="about-pillars-heading" className="sr-only">ارکان و بخش‌های شرکت</h2>
-                        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                            { aboutPillars.map( ( card ) =>
-                            {
-                                const Icon = card.icon;
-                                return (
-                                    <li key={ card.href }>
-                                        <Link
-                                            href={ card.href }
-                                            className="group relative flex h-full flex-col items-end gap-4 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:border-bms-primary/30"
-                                        >
-                                            {/* Icon */ }
-                                            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-slate-600 transition-colors group-hover:bg-bms-primary/10 group-hover:text-bms-primary">
-                                                <Icon className="h-6 w-6" />
-                                            </div>
+                {/* 
+          🎨 UX & 🧠 SEO: A semantic list of navigation cards
+          Each card is a distinct, scannable entity.
+        */}
+                <section aria-labelledby="about-pillars-heading">
+                    <h2 id="about-pillars-heading" className="sr-only">
+                        ارکان و بخش‌های شرکت
+                    </h2>
+                    <ul className="grid gap-6 sm:grid-cols-2">
+                        { aboutPillars.map( ( card ) =>
+                        {
+                            const Icon = card.icon;
+                            return (
+                                <li key={ card.href }>
+                                    <Link
+                                        href={ card.href }
+                                        className="group relative flex h-full flex-col items-start gap-4 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-bms-primary/30 hover:shadow-premium focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-bms-primary/40 md:p-8"
+                                    >
+                                        {/* Icon Element */ }
+                                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-slate-50 text-slate-500 shadow-inner transition-colors duration-300 group-hover:bg-bms-primary-soft group-hover:text-bms-primary">
+                                            <Icon className="h-6 w-6" aria-hidden="true" />
+                                        </div>
 
-                                            {/* Text Content */ }
-                                            <div className="flex-1 space-y-2 text-right">
-                                                <h3 className="text-base font-bold text-slate-900 transition-colors group-hover:text-bms-primary">
-                                                    { card.title }
-                                                </h3>
-                                                <p className="text-xs leading-6 text-slate-500 md:text-sm">
-                                                    { card.desc }
-                                                </p>
-                                            </div>
+                                        {/* Text Content */ }
+                                        <div className="flex-1 space-y-2 text-right">
+                                            <h3 className="text-lg font-black text-slate-900 transition-colors group-hover:text-bms-primary">
+                                                { card.title }
+                                            </h3>
+                                            <p className="text-sm font-light leading-relaxed text-slate-500">
+                                                { card.desc }
+                                            </p>
+                                        </div>
 
-                                            {/* Action Hint */ }
-                                            <div className="mt-auto flex items-center gap-1 text-xs font-medium text-bms-primary opacity-0 transition-opacity group-hover:opacity-100">
-                                                <span>بیشتر بخوانید</span>
-                                                <LuArrowLeft className="h-3 w-3" />
-                                            </div>
-                                        </Link>
-                                    </li>
-                                );
-                            } ) }
-                        </ul>
-                    </section>
-                </div>
+                                        {/* Action Hint Footer */ }
+                                        <div className="mt-4 flex items-center gap-1 border-t border-slate-100 pt-4 text-xs font-bold text-bms-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100 w-full justify-end">
+                                            <span>بیشتر بخوانید</span>
+                                            <LuArrowLeft className="h-3 w-3 shrink-0" aria-hidden="true" />
+                                        </div>
+                                    </Link>
+                                </li>
+                            );
+                        } ) }
+                    </ul>
+                </section>
+
             </div>
         </>
     );

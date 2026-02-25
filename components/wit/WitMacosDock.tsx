@@ -22,10 +22,8 @@ interface IDockItem
 
 const DOCK_ITEMS: IDockItem[] = [
     { id: "hero", label: "معرفی", icon: LuHouse },
-    { id: "story", label: "داستان BMS", icon: LuHistory },
     { id: "what-is-wit", label: "چیستی WIT", icon: LuInfo },
     { id: "architecture", label: "معماری فنی", icon: LuCpu },
-    { id: "domains", label: "قلمروها", icon: LuGlobe },
     { id: "impact", label: "تأثیر اقتصادی", icon: LuTrendingUp },
     { id: "action", label: "مشارکت", icon: LuHandshake },
 ];

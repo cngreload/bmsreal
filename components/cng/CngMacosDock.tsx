@@ -31,9 +31,9 @@ const DOCK_ITEMS: IDockItem[] = [
     { id: "story", label: "مجوزها", icon: LuShieldCheck },
     { id: "pilotvideo", label: "ویدیو", icon: LuCirclePlay },
     { id: "why", label: "ضرورت", icon: LuTriangleAlert },
-    { id: "how", label: "فناوری", icon: LuCpu },
+
     { id: "future", label: "استقرار", icon: LuNetwork },
-    { id: "action", label: "همکاری", icon: LuHandshake },
+
 ];
 
 export default function CngMacosDock ()
