@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================================
+   1. BASE TOKENS & ROOT (RGB Channels for Tailwind alpha-value compatibility)
+   ============================================================================ */
+@layer base {
+  :root {
+    /* --- BMS BRAND PALETTE --- */
+    --color-primary: 20 92 152;           /* #145C98 - Dark Blue */
+    --color-primary-soft: 230 241 251;    /* #E6F1FB - Soft Blue BG */
+    --color-accent: 16 185 129;           /* #10B981 - Medical Green */
+    --color-dark: 15 23 42;               /* #0F172A - Navy */
+    
+    /* --- CORPORATE ACCENTS --- */
+    --color-industrial-red: 215 38 56;    /* #D72638 */
+    --color-intel-yellow: 244 196 48;     /* #F4C430 */
+    
+    /* --- SURFACES --- */
+    --color-surface: 255 255 255;
+    --color-surface-subtle: 248 250 252;  /* Slate 50 */
+
+    --font-sans: var(--font-bms-sans), system-ui, -apple-system, sans-serif;
+  }
+
+  /* --- MOMENTUM SCROLLING (Lenis Core) --- */
+  html.lenis, 
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  /* --- CUSTOM CORPORATE SCROLLBAR --- */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgb(var(--color-surface));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1; /* Slate 300 */
+    border-radius: 100px;
+    border: 2px solid rgb(var(--color-surface));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--color-primary));
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-white text-slate-900 font-sans selection:bg-bms-primary/10 selection:text-bms-primary overflow-x-hidden;
+    min-height: 100vh;
+  }
+
+  /* --- TYPOGRAPHY RECALIBRATION --- */
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tightest text-bms-dark leading-[1.1];
+  }
+  h2 {
+    @apply text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-bms-dark leading-[1.2];
+  }
+  h3 {
+    @apply text-xl sm:text-2xl md:text-3xl font-semibold text-bms-dark tracking-tight;
+  }
+  p {
+    @apply text-base md:text-lg leading-corp-relaxed text-slate-600;
+  }
+}
+
+/* ============================================================================
+   2. COMPONENTS
+   ============================================================================ */
+@layer components {
+  .bms-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  .bms-card-premium {
+    @apply bg-white border border-slate-100 rounded-[2rem] shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] 
+           hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-1;
+  }
+
+  .bms-button-primary {
+    @apply inline-flex items-center justify-center rounded-xl font-bold px-6 py-3 sm:px-8 sm:py-4
+           bg-bms-primary text-white shadow-lg shadow-bms-primary/20 
+           hover:bg-bms-dark hover:-translate-y-0.5 active:scale-95 transition-all duration-300;
+  }
+
+  .eyebrow {
+    @apply text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-4 block;
+  }
+}
+
+/* ============================================================================
+   3. UTILITIES & ANIMATIONS
+   ============================================================================ */
+@layer utilities {
+  .tracking-tightest { letter-spacing: -0.04em; }
+  .text-balance { text-wrap: balance; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
