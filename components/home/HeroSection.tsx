@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { type ReactNode } from "react";
 import { motion, type Variants, type BezierDefinition } from "framer-motion";
 import { MaskContainer } from "@/components/ui/svg-mask-effect";
@@ -27,9 +26,15 @@ function HeroUSPCard ( { children }: HeroUSPCardProps )
                 "bg-slate-900/40 backdrop-blur-xl hover:-translate-y-1 hover:border-bms-primary/50 hover:bg-slate-900/80"
             ) }
         >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#F4C430]/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+            <div
+                className="absolute inset-0 bg-gradient-to-br from-brand-yellow/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                aria-hidden="true"
+            />
             <div className="relative z-10 flex items-start gap-4">
-                <div className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#D72638] shadow-[0_0_12px_rgba(215,38,56,0.6)] transition-transform duration-300 group-hover:scale-125" />
+                <div
+                    className="mt-2 h-2 w-2 shrink-0 rounded-full bg-brand-red shadow-[0_0_12px_rgba(215,38,56,0.6)] transition-transform duration-300 group-hover:scale-125"
+                    aria-hidden="true"
+                />
                 <p className="text-sm font-medium leading-relaxed text-slate-200 opacity-90 transition-opacity group-hover:opacity-100 md:text-base">
                     { children }
                 </p>
@@ -69,30 +74,26 @@ export default function HeroSection ()
         <section
             dir="rtl"
             aria-labelledby="hero-heading"
-            className="relative flex min-h-[90vh] items-center overflow-hidden bg-[#0F172A] py-20 lg:min-h-screen lg:py-0"
+            className="relative flex min-h-[90vh] items-center overflow-hidden bg-bms-primary py-20 lg:min-h-screen lg:py-0"
         >
-            {/* ===================== BACKGROUND ===================== */ }
-            <div className="absolute inset-0 z-0">
-                <Image
-                    src="/bgh2.jpg"
-                    alt="هوشمندسازی زیرساخت‌های صنعتی بارمان"
-                    fill
-                    priority
-                    quality={ 90 }
-                    sizes="100vw"
-                    className="scale-105 object-cover object-center opacity-50"
-                />
-                <div className="absolute inset-0 bg-slate-950/70" />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/80 via-transparent to-white/10" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A] via-[#0F172A]/40 to-transparent" />
-                <div className="absolute right-0 top-0 h-full w-full bg-[radial-gradient(circle_at_80%_20%,rgba(20,92,152,0.15),transparent_50%)]" />
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:48px_48px] opacity-[0.05]" />
+            {/* ===================== VIDEO BACKGROUND & GRADIENTS ===================== */ }
+            <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+                {/* Full Viewport Autoplaying Looped HTML5 Video */ }
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="h-full w-full scale-105 object-cover object-center opacity-40 mix-blend-screen"
+                >
+                    <source src="/hero-bg.mp4" type="video/mp4" />
+                </video>
             </div>
 
-            <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-12 pt-10 sm:px-6 md:px-8 lg:px-12 lg:pb-24 lg:pt-32">
+            <div className="container relative z-10 mx-auto w-full pb-12 pt-10 lg:pb-24 lg:pt-32">
                 <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16 xl:gap-24">
 
-                    {/* LEFT COLUMN */ }
+                    {/* ===================== LEFT COLUMN ===================== */ }
                     <motion.div
                         variants={ containerVars }
                         initial="initial"
@@ -104,8 +105,8 @@ export default function HeroSection ()
                             className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-md"
                         >
                             <span className="relative flex h-2 w-2">
-                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#10B981] opacity-75" />
-                                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#10B981]" />
+                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-bms-accent opacity-75" />
+                                <span className="relative inline-flex h-2 w-2 rounded-full bg-bms-accent" />
                             </span>
                             <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-slate-300">
                                 Industrial Intelligence Node v4.2
@@ -118,7 +119,7 @@ export default function HeroSection ()
                                 className="text-5xl font-black leading-[1.2] tracking-tightest text-white drop-shadow-2xl sm:text-5xl md:text-6xl lg:text-7xl lg:leading-[1.1] xl:text-8xl"
                             >
                                 هوشمندسازی <br />
-                                <span className="bg-gradient-to-l from-[#F4C430] via-yellow-100 to-[#10B981] bg-clip-text text-transparent">
+                                <span className="bg-gradient-to-l from-brand-yellow via-yellow-100 to-bms-accent bg-clip-text text-transparent">
                                     دارایی‌های حیاتی
                                 </span>
                             </h1>
@@ -130,27 +131,33 @@ export default function HeroSection ()
                                 با پایلوت موفق در سطح ملی
                             </HeroUSPCard>
                             <HeroUSPCard>
-                                ترکیب سخت‌افزار، نرم‌افزار و تجربه‌ی میدانی در حوزه‌های حساس انرژی و سلامت دیجیتال
+                                ترکیب سخت‌افزار، نرم‌افزار و تجربه‌ی میدانی در حوزه‌های حساس
+                                انرژی و سلامت دیجیتال
                             </HeroUSPCard>
                             <HeroUSPCard>
-                                طراحی‌شده برای تصمیم‌های استراتژیک؛ مبتنی بر داده‌های دقیق، رمزنگاری‌شده و قابل اتکا
+                                طراحی‌شده برای تصمیم‌های استراتژیک؛ مبتنی بر داده‌های دقیق،
+                                رمزنگاری‌شده و قابل اتکا
                             </HeroUSPCard>
                             <HeroUSPCard>
-                                از صنعت ۴.۰ تا سلامت دیجیتال؛ یک هسته‌ی فناوری (WIT)، دو جهانِ بی‌پایان کاربرد
+                                از صنعت ۴.۰ تا سلامت دیجیتال؛ یک هسته‌ی فناوری (WIT)، دو جهانِ
+                                بی‌پایان کاربرد
                             </HeroUSPCard>
                         </div>
                     </motion.div>
 
-                    {/* RIGHT WIT CARD */ }
+                    {/* ===================== RIGHT WIT CARD ===================== */ }
                     <motion.div
                         initial={ { opacity: 0, scale: 0.95 } }
                         animate={ { opacity: 1, scale: 1 } }
                         transition={ { duration: 1, delay: 0.5 } }
                         className="mt-8 flex justify-center lg:col-span-5 lg:mt-0 lg:justify-end"
                     >
-                        <div className="relative w-full max-w-[320px] overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-[#020617] via-[#0F172A] to-slate-900 p-1.5 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] sm:max-w-lg">
+                        <div className="relative w-full max-w-[320px] overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-[#020617] via-bms-dark to-slate-900 p-1.5 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] sm:max-w-lg">
                             <div className="relative h-full w-full overflow-hidden rounded-[2.2rem] bg-[#020617] p-6 lg:p-8">
-                                <div className="absolute inset-0 bg-[radial-gradient(at_top_right,#10b981_0%,transparent_50%)] opacity-20" />
+                                <div
+                                    className="pointer-events-none absolute inset-0 bg-[radial-gradient(at_top_right,rgba(16,185,129,0.2)_0%,transparent_50%)]"
+                                    aria-hidden="true"
+                                />
 
                                 <div className="relative z-10 space-y-8 text-right lg:space-y-12">
                                     <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center backdrop-blur-sm">
@@ -163,10 +170,10 @@ export default function HeroSection ()
                                     </div>
 
                                     <div className="text-center">
-                                        <h3 className="text-xl font-bold tracking-tight text-[#F4C430] lg:text-2xl">
+                                        <h3 className="text-xl font-bold tracking-tight text-brand-yellow lg:text-2xl">
                                             چشم‌انداز ما
                                         </h3>
-                                        <div className="mx-auto mt-3 h-1 w-12 rounded-full bg-gradient-to-r from-transparent via-[#F4C430] to-transparent opacity-60 lg:mt-4" />
+                                        <div className="mx-auto mt-3 h-1 w-12 rounded-full bg-gradient-to-r from-transparent via-brand-yellow to-transparent opacity-60 lg:mt-4" />
                                     </div>
 
                                     <div className="overflow-hidden rounded-2xl border border-white/5 bg-slate-900/40 shadow-inner">
@@ -176,7 +183,7 @@ export default function HeroSection ()
                                                     <p className="mx-auto text-center text-2xl font-black leading-tight tracking-tight text-white lg:text-4xl">
                                                         کنترل کامل
                                                         <br />
-                                                        <span className="text-[#F4C430] drop-shadow-[0_0_12px_rgba(244,196,48,0.6)]">
+                                                        <span className="text-brand-yellow drop-shadow-[0_0_12px_rgba(244,196,48,0.6)]">
                                                             در لحظه
                                                         </span>
                                                     </p>
@@ -185,8 +192,9 @@ export default function HeroSection ()
                                             className="h-48 lg:h-64"
                                         >
                                             <p className="my-auto px-4 text-center text-xs font-medium leading-6 text-slate-300 lg:px-8 lg:text-base lg:leading-8">
-                                                ما در بارمان محور اسپادانا، طلایه‌دار تحقق رؤیای انسان مدرن هستیم —
-                                                رؤیایی که در آن، کنترل کامل و بی‌درنگ بر دارایی‌ها، از هر جا و در هر لحظه، ممکن است.
+                                                ما در بارمان محور اسپادانا، طلایه‌دار تحقق رؤیای انسان
+                                                مدرن هستیم — رؤیایی که در آن، کنترل کامل و بی‌درنگ بر
+                                                دارایی‌ها، از هر جا و در هر لحظه، ممکن است.
                                             </p>
                                         </MaskContainer>
                                     </div>
@@ -195,14 +203,16 @@ export default function HeroSection ()
                                         className="flex flex-wrap justify-center gap-2 border-t border-white/5 pt-4"
                                         dir="ltr"
                                     >
-                                        { [ "Real-Time", "Secure", "Industrial", "Decision AI" ].map( ( tag ) => (
-                                            <span
-                                                key={ tag }
-                                                className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 font-mono text-[8px] font-bold uppercase tracking-widest text-slate-500 lg:text-[9px]"
-                                            >
-                                                { tag }
-                                            </span>
-                                        ) ) }
+                                        { [ "Real-Time", "Secure", "Industrial", "Decision AI" ].map(
+                                            ( tag ) => (
+                                                <span
+                                                    key={ tag }
+                                                    className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 font-mono text-[8px] font-bold uppercase tracking-widest text-slate-500 lg:text-[9px]"
+                                                >
+                                                    { tag }
+                                                </span>
+                                            )
+                                        ) }
                                     </div>
                                 </div>
                             </div>
@@ -216,7 +226,7 @@ export default function HeroSection ()
                     <LuActivity className="h-6 w-6" />
                 </div>
                 <div className="text-right">
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                    <div className="font-mono text-[10px] font-bold uppercase tracking-widest text-slate-400">
                         Network Status
                     </div>
                     <div className="text-sm font-black text-slate-900">۹۹.۹٪ پایداری</div>
