@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { type ReactNode } from "react";
 import { motion, type Variants, type BezierDefinition } from "framer-motion";
 import { MaskContainer } from "@/components/ui/svg-mask-effect";
@@ -27,7 +28,7 @@ function HeroUSPCard ( { children }: HeroUSPCardProps )
             ) }
         >
             <div
-                className="absolute inset-0 bg-gradient-to-br from-brand-yellow/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-yellow/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 aria-hidden="true"
             />
             <div className="relative z-10 flex items-start gap-4">
@@ -74,26 +75,48 @@ export default function HeroSection ()
         <section
             dir="rtl"
             aria-labelledby="hero-heading"
-            className="relative flex min-h-[90vh] items-center overflow-hidden bg-bms-primary py-20 lg:min-h-screen lg:py-0"
+            className="relative flex min-h-[90vh] items-center overflow-hidden bg-bms-dark py-20 lg:min-h-screen lg:py-0"
         >
-            {/* ===================== VIDEO BACKGROUND & GRADIENTS ===================== */ }
+            {/* ===================== LAYER 0: HYBRID BACKGROUND ===================== */ }
             <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-                {/* Full Viewport Autoplaying Looped HTML5 Video */ }
+
+                {/* MOBILE ONLY: Main Video Background (< 768px) */ }
+                {/* Changed to object-top and increased native opacity (no mix-blend) for crisp, sharp rendering up high behind the text! */ }
                 <video
                     autoPlay
                     muted
                     loop
                     playsInline
-                    className="h-full w-full scale-105 object-cover object-center opacity-40 mix-blend-screen"
+                    className="absolute inset-0 z-0 h-full w-full scale-105 object-cover object-top opacity-70 md:hidden"
                 >
                     <source src="/hero-bg.mp4" type="video/mp4" />
                 </video>
+
+                {/* DESKTOP ONLY: Main Image Background (>= 768px) */ }
+                <Image
+                    src="/hero-bg.jpg"
+                    alt="هوشمندسازی زیرساخت‌های صنعتی بارمان"
+                    fill
+                    priority
+                    quality={ 90 }
+                    sizes="100vw"
+                    className="hidden scale-105 object-cover object-center opacity-50 md:block"
+                />
+
+                {/* Common Overlays */ }
+                {/* Adjusted mobile background opacity so the video is dramatically clearer than before */ }
+                <div className="absolute inset-0 bg-slate-950/40 md:bg-slate-950/70" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/80 via-transparent to-white/10" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A] via-[#0F172A]/40 to-transparent" />
+                <div className="absolute right-0 top-0 h-full w-full bg-[radial-gradient(circle_at_80%_20%,rgba(20,92,152,0.15),transparent_50%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:48px_48px] opacity-[0.05]" />
             </div>
 
-            <div className="container relative z-10 mx-auto w-full pb-12 pt-10 lg:pb-24 lg:pt-32">
+            {/* ===================== LAYER 1: FOREGROUND CONTENT ===================== */ }
+            <div className="container relative z-20 mx-auto w-full pb-12 pt-10 lg:pb-24 lg:pt-32">
                 <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16 xl:gap-24">
 
-                    {/* ===================== LEFT COLUMN ===================== */ }
+                    {/* ----- LEFT COLUMN: MAIN TYPOGRAPHY ----- */ }
                     <motion.div
                         variants={ containerVars }
                         initial="initial"
@@ -125,7 +148,7 @@ export default function HeroSection ()
                             </h1>
                         </motion.div>
 
-                        <div className="grid grid-cols-1 gap-4 pt-6 sm:grid-cols-2 lg:pt-12">
+                        <div className="grid grid-cols-1 gap-4 pt-6 sm:grid-cols-2 lg:pt-12  ">
                             <HeroUSPCard>
                                 تنها تولیدکننده بومی سامانه کنترل و مانیتورینگ جایگاه‌های CNG
                                 با پایلوت موفق در سطح ملی
@@ -145,38 +168,66 @@ export default function HeroSection ()
                         </div>
                     </motion.div>
 
-                    {/* ===================== RIGHT WIT CARD ===================== */ }
+                    {/* ----- RIGHT COLUMN: HYBRID DASHBOARD CARD ----- */ }
                     <motion.div
                         initial={ { opacity: 0, scale: 0.95 } }
                         animate={ { opacity: 1, scale: 1 } }
                         transition={ { duration: 1, delay: 0.5 } }
-                        className="mt-8 flex justify-center lg:col-span-5 lg:mt-0 lg:justify-end"
+                        className="mt-8 flex justify-center lg:col-span-5  lg:justify-end"
                     >
                         <div className="relative w-full max-w-[320px] overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-[#020617] via-bms-dark to-slate-900 p-1.5 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] sm:max-w-lg">
-                            <div className="relative h-full w-full overflow-hidden rounded-[2.2rem] bg-[#020617] p-6 lg:p-8">
-                                <div
-                                    className="pointer-events-none absolute inset-0 bg-[radial-gradient(at_top_right,rgba(16,185,129,0.2)_0%,transparent_50%)]"
-                                    aria-hidden="true"
-                                />
 
-                                <div className="relative z-10 space-y-8 text-right lg:space-y-12">
-                                    <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center backdrop-blur-sm">
-                                        <span className="text-4xl font-black tracking-tighter text-emerald-400 drop-shadow-[0_0_15px_rgba(16,185,129,0.4)] lg:text-5xl">
-                                            WIT
-                                        </span>
-                                        <p className="mt-2 font-mono text-[8px] font-bold uppercase tracking-widest text-slate-500 lg:text-[10px]">
-                                            Worldwide Intelligent Technology
-                                        </p>
+                            {/* Inner Card Screen */ }
+                            <div className="relative flex h-full w-full flex-col overflow-hidden rounded-[2.2rem] bg-[#020617] p-6 shadow-inner lg:p-8">
+
+                                {/* ---------- DESKTOP ONLY: Embedded Card Video ---------- */ }
+                                <div className="pointer-events-none absolute inset-0 z-0 hidden flex-col items-center justify-center md:flex" aria-hidden="true">
+                                    <div className="relative h-[70%] w-full">
+                                        <video
+                                            autoPlay
+                                            muted
+                                            loop
+                                            playsInline
+                                            className="absolute inset-0 h-full w-full object-cover opacity-60 mix-blend-screen"
+                                        >
+                                            <source src="/hero-bg.mp4" type="video/mp4" />
+                                        </video>
+                                        {/* Dark gradient mapping to sink it into the background */ }
+                                        <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/20 via-[#020617]/40 to-[#020617] opacity-90" />
                                     </div>
+                                </div>
 
-                                    <div className="text-center">
-                                        <h3 className="text-xl font-bold tracking-tight text-brand-yellow lg:text-2xl">
-                                            چشم‌انداز ما
-                                        </h3>
-                                        <div className="mx-auto mt-3 h-1 w-12 rounded-full bg-gradient-to-r from-transparent via-brand-yellow to-transparent opacity-60 lg:mt-4" />
-                                    </div>
+                                {/* Common card gradient */ }
+                                <div className="pointer-events-none  absolute inset-0 z-0 bg-[radial-gradient(at_top_right,rgba(16,185,129,0.15)_0%,transparent_50%)]" aria-hidden="true" />
+                                {/* -------------------------------------------------------- */ }
 
-                                    <div className="overflow-hidden rounded-2xl border border-white/5 bg-slate-900/40 shadow-inner">
+                                {/* TOP: Header Label */ }
+                                <div className="relative z-10 rounded-2xl border border-white/10 bg-white/5 p-4 text-center backdrop-blur-md">
+                                    <span className="text-4xl font-black tracking-tighter text-emerald-400 drop-shadow-[0_0_15px_rgba(16,185,129,0.5)] lg:text-5xl">
+                                        WIT
+                                    </span>
+                                    <p className="mt-2 font-mono text-[8px] font-bold uppercase tracking-widest text-white/70 lg:text-[10px]">
+                                        Worldwide Intelligent Technology
+                                    </p>
+                                </div>
+
+                                {/* MIDDLE: Responsive Gap vs Mobile Title */ }
+
+                                {/* 1. Mobile Title (Visible only < 768px) */ }
+                                <div className="relative z-10 mt-8 text-center md:hidden">
+                                    <h3 className="text-xl font-bold tracking-tight text-brand-yellow">
+                                        چشم‌انداز ما
+                                    </h3>
+                                    <div className="mx-auto mt-4 h-1 w-12 rounded-full bg-gradient-to-r from-transparent via-brand-yellow to-transparent opacity-80" />
+                                </div>
+
+                                {/* 2. Desktop Spacer (Visible only >= 768px) */ }
+                                <div className="relative z-10 my-24 hidden flex-1 min-h-[160px] md:block lg:min-h-[220px]" aria-hidden="true" />
+
+                                {/* BOTTOM: Vision Text and Details */ }
+                                <div className="relative z-10 flex flex-col space-y-5 text-right md:mt-0 lg:space-y-6">
+                                    {/* Mask Text Reveal */ }
+                                    <div className="overflow-hidden   rounded-2xl border border-white/5 bg-slate-950/60 shadow-xl backdrop-blur-sm">
                                         <MaskContainer
                                             revealText={
                                                 <div className="flex h-full w-full items-center justify-center bg-slate-950">
@@ -189,9 +240,9 @@ export default function HeroSection ()
                                                     </p>
                                                 </div>
                                             }
-                                            className="h-48 lg:h-64"
+                                            className="h-40 sm:h-48 lg:h-56"
                                         >
-                                            <p className="my-auto px-4 text-center text-xs font-medium leading-6 text-slate-300 lg:px-8 lg:text-base lg:leading-8">
+                                            <p className="my-auto px-4 text-center text-[11px] font-medium leading-6 text-slate-300 sm:text-xs lg:px-8 lg:text-sm lg:leading-8">
                                                 ما در بارمان محور اسپادانا، طلایه‌دار تحقق رؤیای انسان
                                                 مدرن هستیم — رؤیایی که در آن، کنترل کامل و بی‌درنگ بر
                                                 دارایی‌ها، از هر جا و در هر لحظه، ممکن است.
@@ -199,6 +250,7 @@ export default function HeroSection ()
                                         </MaskContainer>
                                     </div>
 
+                                    {/* Footer Stats Matrix */ }
                                     <div
                                         className="flex flex-wrap justify-center gap-2 border-t border-white/5 pt-4"
                                         dir="ltr"
@@ -215,15 +267,16 @@ export default function HeroSection ()
                                         ) }
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </motion.div>
                 </div>
             </div>
 
-            <div className="absolute bottom-8 right-8 hidden items-center gap-4 rounded-2xl border border-slate-100 bg-white p-4 shadow-2xl xl:flex">
+            <div className="pointer-events-none absolute bottom-8 right-8 z-30 hidden items-center gap-4 rounded-2xl border border-slate-100 bg-white p-4 shadow-2xl xl:flex">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 shadow-inner">
-                    <LuActivity className="h-6 w-6" />
+                    <LuActivity className="h-6 w-6 animate-pulse" />
                 </div>
                 <div className="text-right">
                     <div className="font-mono text-[10px] font-bold uppercase tracking-widest text-slate-400">
